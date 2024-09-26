@@ -5,4 +5,4 @@ hadoop/
 /downloads/
 venv
 .idea/
-downloads/*
+downloads
