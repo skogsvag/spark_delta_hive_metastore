@@ -13,15 +13,15 @@ RUN mkdir /var/run/sshd
 RUN service ssh start
 
 # Download and install Hadoop
-#RUN wget https://archive.apache.org/dist/hadoop/common/hadoop-3.3.4/hadoop-3.3.4.tar.gz
-#RUN tar -xzvf hadoop-3.3.4.tar.gz
-#RUN mv hadoop-3.3.4 /usr/local/hadoop
+#RUN wget https://archive.apache.org/dist/hadoop/common/hadoop-3.4.1/hadoop-3.4.1.tar.gz
+#RUN tar -xzvf hadoop-3.4.1.tar.gz
+#RUN mv hadoop-3.4.1 /usr/local/hadoop
 
 # Copy Hadoop tarball
-COPY downloads/hadoop-3.4.0.tar.gz /tmp/hadoop-3.4.0.tar.gz
+COPY downloads/hadoop-3.4.1.tar.gz /tmp/hadoop-3.4.1.tar.gz
 RUN mkdir -p /home/hadoop
-RUN tar -xf /tmp/hadoop-3.4.0.tar.gz -C /home/hadoop --strip-components=1
-RUN rm /tmp/hadoop-3.4.0.tar.gz
+RUN tar -xf /tmp/hadoop-3.4.1.tar.gz -C /home/hadoop --strip-components=1
+RUN rm /tmp/hadoop-3.4.1.tar.gz
 
 # Set up environment variables
 ENV HADOOP_HOME /home/hadoop

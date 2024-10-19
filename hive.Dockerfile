@@ -11,21 +11,21 @@ RUN apt-get update && apt-get install -y \
     ssh
 
 ## Download and install Hive
-#RUN wget https://archive.apache.org/dist/hive/hive-3.1.3/apache-hive-3.1.3-bin.tar.gz
+#RUN wget https://archive.apache.org/dist/hive/hive-4.0.1/apache-hive-4.0.1-bin.tar.gz
 #RUN tar -xzvf apache-hive-3.1.3-bin.tar.gz
 #RUN mv apache-hive-3.1.3 /usr/local/hive
 
 # Copy Hadoop and Hive tarballs
-COPY downloads/hadoop-3.4.0.tar.gz /tmp/hadoop-3.4.0.tar.gz
+COPY downloads/hadoop-3.4.1.tar.gz /tmp/hadoop-3.4.1.tar.gz
 RUN mkdir -p /home/hadoop
-RUN tar -xf /tmp/hadoop-3.4.0.tar.gz -C /home/hadoop --strip-components=1
-RUN rm /tmp/hadoop-3.4.0.tar.gz
+RUN tar -xf /tmp/hadoop-3.4.1.tar.gz -C /home/hadoop --strip-components=1
+RUN rm /tmp/hadoop-3.4.1.tar.gz
 
 
-COPY downloads/apache-hive-4.0.0-bin.tar.gz /tmp/apache-hive-4.0.0-bin.tar.gz
+COPY downloads/apache-hive-4.0.1-bin.tar.gz /tmp/apache-hive-4.0.1-bin.tar.gz
 RUN mkdir -p /home/hive
-RUN tar -xf /tmp/apache-hive-4.0.0-bin.tar.gz -C /home/hive/ --strip-components=1
-RUN rm /tmp/apache-hive-4.0.0-bin.tar.gz
+RUN tar -xf /tmp/apache-hive-4.0.1-bin.tar.gz -C /home/hive/ --strip-components=1
+RUN rm /tmp/apache-hive-4.0.1-bin.tar.gz
 
 # Set up environment variables
 ENV HIVE_HOME /home/hive

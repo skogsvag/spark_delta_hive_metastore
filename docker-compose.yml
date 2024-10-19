@@ -95,11 +95,8 @@ services:
   hue:
     image: gethue/hue:latest
     container_name: hue
-    environment:
-      - HUE_CONF_DIR=/hue/desktop/conf
-      - HUE_IGNORE_PASSWORD_SCRIPT_ERRORS=true
     volumes:
-      - ./hue:/hue/desktop/conf
+      - ./hue.ini:/usr/share/hue/desktop/conf/z-hue.ini
     ports:
       - "8888:8888"
     depends_on:

@@ -1,3 +1,9 @@
+## fixed some issues with Hue installation
+
+## create a folder /downloads in the root of the project
+# download apache hadoop 3.4.1, apache hive 4.0.1 tarballs in the downloads folder
+run docker-compose build
+run docker-compose up
 
 
 
